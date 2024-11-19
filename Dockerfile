@@ -42,6 +42,7 @@ RUN echo 'deb http://deb.debian.org/debian bookworm-backports main' > /etc/apt/s
   && useradd -m $NONPRIVUSER -g $NONPRIVGROUP \
   && rm -rf /var/lib/apt/lists/*
 
+COPY ./fonts /usr/share/fonts 
 # create font-cache for our gosu user
 USER jodconverter
 RUN fc-cache -fr
